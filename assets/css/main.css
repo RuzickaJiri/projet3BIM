@@ -69,7 +69,9 @@ img{
 	display : block;
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 100%;
 }
+
 
 figcaption{
   font-style: italic;
@@ -2400,6 +2402,7 @@ input, select, textarea {
 			font-weight: 900;
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
+			width: 100%; 
 		}
 
 		table thead {
@@ -2436,6 +2439,7 @@ input, select, textarea {
 				border-top: 0;
 			}
 
+		
 /* Button */
 
 	input[type="submit"],
