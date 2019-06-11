@@ -152,8 +152,18 @@
 							<section>
 								<h2>Follow</h2>
 								<ul class="icons">
-									<li><a href="https://github.com/RuzickaJiri/projet3BIM.git" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="https://github.com/RuzickaJiri/projet3BIM.git" class="icon style2 fa-github" style="width: 40px; height: 40px;"><span class="label">GitHub</span></a></li>
+									
+									<li><a <button id="myBtn" class="dropbtn"> <i class="icon style2 fa-envelope"></i> </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#contact">gmail.com</a> </a> 
+									
+									<li><a <button id="myBtn" class="dropbtn"> <i class="icon style2 fa-phone"></i> </button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#contact">+33 07 56 67 78 87</a> </a> 
+  </div> </li>
+									
+									<li><a href="#" class="icon style2 fa-phone"><span class="label" class="speech-bubble:after">Phone</span></a></li>
 									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
 								</ul>
 							</section>
@@ -174,3 +184,14 @@
 
 	</body>
 </html>
+
+<script>
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("myBtn").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+</script>
+
