@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Maths</title>
+		<title>Méthode et Modélisation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -51,11 +51,85 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Maths : Les différentes équations et modèles</h1>
+							<h1>Méthodes et Modélisation</h1>
 							<span class="image main"><img src="images/maths.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							
+							<p> Cette partie est le coeur de notre projet. L’objectif est, à l’aide d’équations et d’outils d’analyse mathématique tel que le logiciel R, de déterminer la cadence minimisant la fatigue lors de la pratique du vélo.</p>
+							
+							<h2>Hypothèses</h2>
+						<ul>
+			  <li>Coureur assis sur sa selle.</li>
+        <li>Température fixe. Puissance fixe. Terrain fixe. </li>
+        <li>Cadence constante au cours de chaque expérience, mais différente d’une expérience à une autre.</li>
+            </ul>
+            
+							<h2>Définition des termes</h2>
+							
+Avant de commencer, voici un tableau qui définie quelques termes essentiels pour bien comprnedre la suite :
+  <table>
+   <tr>
+      <th>Terme</th>
+      <th>Abréviation</th>
+      <th>Unité</th>
+      <th>Définition</th>
+   </tr>
+   <tr>
+      <td>Puissance</td>
+      <td>P</td>
+      <td>Watt (W = J/s)</td>
+      <td>Niveau de l’effort fourni pour vaincre les résistances qui s’opposent au cycliste (pesanteur, frottements).</td>
+   </tr>
+   <tr>
+      <td>Cadence</td>
+      <td>C</td>
+      <td>Rotations par minute (rpm)</td>
+      <td>Vitesse à laquelle le cycliste tourne les jambes.</td>
+   </tr>
+   <tr>
+      <td>Fréquence cardiaque</td>
+      <td>H</td>
+      <td>Battements par minute (bpm)</td>
+      <td>Hmin : valeur au repos; Hmax : valeur maximale.</td>
+   </tr>
+</table>
+						
+							<h2>Equations dont nous disposons</h2>
+						
+						<p>Nous avons dans un premier temps trouver une équation nous permettant de relier à la fois la puissance, la cadence et la fréquence cardiaque :
+						<a href="https://www.codecogs.com/eqnedit.php?latex=P=\mu&space;C^{\alpha}exp^{-\beta&space;C}(H(t&plus;l)-H_{min})^{\gamma}e&space;\qquad&space;(1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P=\mu&space;C^{\alpha}exp^{-\beta&space;C}(H(t&plus;l)-H_{min})^{\gamma}e&space;\qquad&space;(1)" title="P=\mu C^{\alpha}exp^{-\beta C}(H(t+l)-H_{min})^{\gamma}e \qquad (1)" /></a></p>
+						
+		
+							<h2>Première approche - La puissance constante</h2>
+
+            <p>Avant de commencer toute modélisation, nous avons dû procéder à un travail de recherches bibliographiques important. Quelques équations ont été trouvées, mais aucune ne permettait de relier tous nos paramètres. Il a donc fallu mettre en lien plusieurs de ces équations.</p>
+            <p>Nous avons choisi de prendre comme fonction de fatigue la concentration de lactate au cours du temps. En effet, à partir de nos recherches, la quantité de lactate est directement proportionnelle à la concentration des protons. Ainsi, le but était de tracer l’évolution de la concentration de lactate dans le muscle au cours du temps, et ce pour différentes valeurs de cadence. A partir de cela, l'idée était de déterminer la meilleure cadence, que nous avons défini comme la cadence qui retarde au maximum l’augmentation de lactate. Nous nous sommes ici confrontés à un problème multi-échelle, où pour pouvoir relier nos équations il fallait tout d’abord regarder ce qui évolue le plus vite, pour pouvoir ensuite simplifier notre modèle en approximant certaines variables par leur état d’équilibre.</p>
+						
+							<h2>Difficultés rencontrées</h2>
+						
+            <ul>Nous avons été confronté à divers problèmes lors du travail sur le modèle, qui nous ont chacun poussé à revoir notre approche :
+			  <li>Dans l’ensemble, tous nos paramètres variaient dans le temps à une vitesse comparable, on ne pouvait donc pas simplifier une de nos variables par son état d’équilibre.</li>
+				<li>Nous nous sommes rendus compte qu'à partir du moment où la demande en dioxygène est supérieure au volume de dioxygène absorbé, le lactate évoluait toujours de la même façon dans le muscle. Autrement dit, tous les individus se fatiguent aussi vite après avoir atteint ce seuil, qui correspond à environ 70% de la VO2 max (capacité maximale d’absorption de dioxygène d’un individu). Ainsi, on cherchait à ce moment à déterminer la cadence où le temps mis pour dépasser ce seuil (D(O2)>70%VO2max) est le plus grand.<br>
+				Cependant, l’équation (2) est difficilement exploitable : en effet, elle est non autonome donc on ne sait pas la résoudre.
+
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						</div>
 					</div>
 
