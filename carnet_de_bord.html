@@ -114,21 +114,112 @@ L'objectif est de faire, lors de notre premier rendez-vous après les vacances, 
 Nous avons expliqué à Corinne notre modèle de manière simple, ainsi que la démarche que nous réalisons. Elle nous a donné un nouveau contact, Lionel Manin qui est professeur en génie mécanique à l'INSA et qui peut nous aider et nous fournir du matériel de test. Nous fixerons un rendez-vous avec lui. <br>
 La partie modèle nous semble assez floue et nous éprouvons des difficultés à bien relier tous nos paramètres. 
 </p>
-                   <h4>Suite et déroulé de la séance</h4>
-                   
+
+                   <h4>Suite et déroulé de la séance</h4>                   
 <p> 
 Poursuite du modèle mathématique : <br>
-Notre première approche est de considérer seulement la concentration de lactate dans le sang comme indicateur de fatigue. Nous avons donc simplement à représenter le lactate en fonction du temps pour plusieurs cadences et ensuite choisir la cadence où le taux de lactate met le plus de temps à augmenter. 
+Notre première approche est de considérer seulement la concentration de lactate dans le sang comme indicateur de fatigue. Nous avons donc simplement à représenter le lactate en fonction du temps pour plusieurs cadences et ensuite choisir la cadence où le taux de lactate met le plus de temps à augmenter. On veut considérer la meilleure comme la cadence où le temps mis pour dépasser ce seuil (D(O2)>70%VO2max) est le plus grand. <br>
+Nous avons continué à refléchir sur cette modélisation : 
+<ul>
+<li>Définition du seuil à dépasser.</li>
+<li>Réflexions sur les relations entre fréquence cardiaque, demande et apport en oxygène.</li>
+</ul>
+Pour déterminer la cadence optimale, il nous suffirait donc simplement de déterminer la fréquence cardiaque et non plus le taux de lactate. 
 </p>
+
                 <h2>Séance du 21 mars 2019</h2>
-							      <h4>Déroulé de la séance</h4>
 <p> 
-Reformalisation précise et détaillée de notre sujet sous forme de texte écrit et organisé. <br>
-Réflexion sur la modélisation du lactate en fonction du temps : rendre certains paramètres dépendants de la demande et de l'absorption de dioxygène. 
+Reformalisation précise et détaillée de notre sujet sous forme de texte écrit et organisé. 
 <br>
-Malheureusement, nous nous retrouvons à nouveau dans une impasse car nous n'arrivions pas à modéliser cette courbe car les équations de lactate que nous avions ne conrespondaient pas aux conditions de notre projet. 
-</p>               
-							
+Réflexion sur la modélisation du lactate en fonction du temps : rendre certains paramètres dépendants de la demande et de l'absorption de dioxygène. 
+</p>
+
+                <h2>Séance du 28 mars 2019</h2>
+<p>
+Nous avons demandé quelques conseils à Laurent Pujo Menjouet concernant l'équation reliant la demande en O2 et la fréquence cardiaque. <br>
+Cette équation est insoluble car c'est une équation différentielle ordinaire homologue qui nous contraint à trouver une deuxième équation.
+</p>
+
+                <h2>Séance du 29 mars 2019</h2>
+<p>
+Nous avons réalisé nos premiers essais de modélisation. <br>
+Malheureusement, nous nous retrouvons dans une impasse car l'équation reliant fréquence cardiaque, puissance et cadence que nous avons représenté sur Rstudio ne nous permet pas de répondre à notre problématique. <br>
+De plus, les équations de lactate que nous avions ne conrespondaient pas aux conditions de notre projet. Elle représente l'évolution du lactate au cours du temps après effort (et non pendant !).
+</p>							
+
+                <h2>Séance du 05 avril 2019</h2>
+                    <h4>Objectifs de la séance </h4>
+<p> 
+<ul>
+   <li>Trouver une nouvelle équation permettant de mettre en évidence l’indicateur de fatigue pendant effort </li>
+   <li>Utilisation et modélisation des équations obtenues.</li>
+</ul> 
+</p>
+
+							      <h4>Déroulé de la séance </h4>
+<p> 
+<ul>
+  <li>Nous sommes peu productifs. Nous avons du mal à utiliser correctement nos équations. On trace la fréquence cardiaque en fonction de la cadence, fréquence cardiaque en fonction de la puissance. </li>
+  <li>Nous envisageons de faire varier la puissance pour avoir des résultats. Sans varier la puissance, nous n'arrivons pas à déterminer une cadence optimale.</li>
+  <li>Traçage de fréquence cardiaque en fonction de la cadence (pour différentes valeurs de la puissance)</li>
+</ul>
+</p>
+
+                  <h2>Séance du 30 avril 2019</h2>
+                    <h4>Objectifs de la séance </h4>
+<p> 
+<ul>
+   <li>Séparation du travail en deux groupes : rédaction du site et avancement de la modélisation jusqu'à obtenir un modèle acceptable.</li>
+   <li>Utilisation et modélisation des équations obtenues.</li>
+</ul> 
+</p>
+
+							      <h4>Déroulé de la séance </h4>
+<p> 
+Simulation de la dépendance temporelle de l’accumulation de lactate dans le sang (Accumulation du lactate dans le sang en fonction du temps).
+<ol> Etapes de recherche : 
+  <li>On cherche la fréquence cardiaque la plus faible. </li>
+  <li>Pour une cadence donnée, on modélise le niveau de lactate pendant l'effort, à l'instant t. Suivant l'évolution des courbes, on peut savoir quelle est la meilleure cadence. </li>
+  <li>Traçage de fréquence cardiaque en fonction de la cadence (pour différentes valeurs de la puissance)</li>
+</ol>
+</p>
+<p>
+Le site avance, et nous avons décidé d'utiliser la plateforme github pour sauvegarder nos avancées sur le site et sur la modélisation ainsi que pour permettre aux collègues du groupe d'accéder à tous les fichiers.
+</p>
+
+                  <h2>Séance du 7 mai 2019</h2>
+                    <h4>Objectifs de la séance </h4>
+<p> 
+<ul>
+   <li>Avancement du modèle : suite de la modélisation de la fréquence cardiaque en fonction de la cadence pour différentes puissances.</li>
+   <li>Avancement du site : une personne par partie à rédiger. </li>
+</ul> 
+</p>
+
+							      <h4>Déroulé de la séance </h4>
+<p> 
+Simulation de la dépendance temporelle de l’accumulation de lactate dans le sang (Accumulation du lactate dans le sang en fonction du temps). <br>
+Nous avons essayé de contacter un thésard recommandé par Corinne Dorel pour qu'il nous apporte son aide en modélisation, mais nous n'avons pas réussi à fixer un rendez-vous ensemble. 
+</p>
+
+                  <h2>Séance du 14 mai 2019</h2>
+                    <h4>Déroulé de la séance </h4>
+<p> 
+<ul>
+   <li>Avancement du modèle : fin de la modélisation du lactate : nous avons à priori plusieurs résultats  exploitables pointants vers des cadences précises. Il reste finalement à trouver une relation entre cadence et stress musculaire (stress apparaissant lors de trop faibles cadences de pédalage).</li>
+   <li>Avancement du site : chacun sa partie. </li>
+</ul> 
+</p>
+
+                  <h2>Séance du 21 mai 2019</h2>
+                    <h4>Déroulé de la séance </h4>
+<p> 
+Avancement du site : la date limite approchant, nous avons choisi de nous concentrer davantage sur le site. La rédaction des parties avance donc plus rapidement. 
+</p>
+
+<p> 
+
+                
 						</div>
 					</div>
 
