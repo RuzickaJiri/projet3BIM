@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MPresentation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/cyclist.png" alt="" /></span><span class="title">Pédaler sans se fatiguer</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="biologie.html">Partie Bio</a></li>
+							<li><a href="maths.html">Modélisation Maths</a></li>
+							<li><a href="experimental.html">Resultats experimentaux</a></li>
+							<li><a href="carnet_de_bord.html">Carnet de bord</a></li>
+							<li><a href="Source.html">Sources</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Source</h1>
+							<span class="image main"><img src="images/source_grande.jpg" alt="" /></span>
+				
+							<p> Pour comprendre l'ensemble de notre sujet et atteindre nos objectifs nous avons utilisé des ressources diverses, comme des articles sicentifique de recherche ou bien des entretiens avec des professionnel du domaine.</p>
+							
+							<h2>Solutions existantes</h2>
+								<ul>
+									<li>équations permettant de relier certains paramètres / certaines variables entres elles :</li>
+										<ul>
+											<li>Puissance en fonction de fréquence cardiaque et cadence</li>
+											<li>Demande en oxygène et fréquence cardiaque</li>
+											<li>Absorption d’oxygène et fréquence cardiaque</li>
+											<li>Évolution du lactate en fonction du temps</li>
+										</ul>
+									<li>Pas de solution “globale” liant tous ces paramètres</li>
+								</ul>
+							<h2>Notre solution, en quoi la nôtre est meilleure ?</h2>
+							<p>D’après nos lectures d’articles, le lactate est un bon indicateur de fatigue du muscle. L’apparition de lactate en quantité significative dans le sang témoigne d’une fatigue des muscles.</p>   
+							<p>Comme la concentration de lactate dans le sang augmente significativement lorsque le cycliste atteint le stade d’anaérobie, une première approche est de considérer que la meilleure cadence est celle dont le stade d’anaérobie est atteint le plus tard dans le temps.</p>
+							<p>La création de lactate dépend de l’apparition et de la disparition de lactate. D’après nos recherches, nous pensons qu’il est judicieux de supposer que ces 2 paramètres dépendent respectivement de la demande et de l’absorption d’oxygène.</p>
+							<p>De même, d’après des équations présentes dans des articles scientifiques, la demande et de l’absorption d’oxygène dépendent de la fréquence cardiaque.</p>
+    						<p>Enfin, il est possible de modéliser la fréquence cardiaque en fonction de la cadence, de la puissance et du temps. 
+							Nous arriverons donc à représenter la concentration de lactate en fonction du temps à partir d’une puissance et d’une cadence données, et ainsi choisir la meilleure cadence.</p>
+    
+							<p>Comme notre objectif de base est de représenter la fatigue musculaire à partir de la cadence, nous estimons que le modèle le plus approprié est celui qui mesure le lactate. Or, il n’y a pas de d’équations reliant lactate, cadence et temps. Le modèle que nous arriverons à produire sera forcément une nouveauté (même s’il n’est pas très concluant).<p>
+
+							<h2>Faisabilité et outils à notre disposition</h2>
+							<p>Dans ce projet, on va réaliser les modélisations en utilisant le logiciel Rstudio. Les équations que nous avons à notre disposition nous semblent résolvables (cela restera à confirmer). C’est ce qui est le plus important pour le moment.</p>
+
+							<h2>Partie expérimentale</h2>
+							<p>Cette partie n’est pas la plus importante. Nous voulons surtout nous concentrer sur les équations, la modélisation. Nous pourrons éventuellement tester nos modèles sur de vraies données. Mais ces données peuvent aussi être récupérées à partir d’autres articles. Cela reste à définir plus tard.</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
+									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
