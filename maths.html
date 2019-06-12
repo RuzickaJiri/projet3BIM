@@ -75,13 +75,13 @@
             
 							<h2>Définition des termes</h2>
 							
-Avant de commencer, voici un tableau qui définie quelques termes essentiels pour bien comprendre la suite :
+<p>Avant de commencer, voici un tableau qui définie quelques termes essentiels pour bien comprendre la suite :</p>
   <table>
    <tr>
-      <td width="15%"><strong>Terme</strong></th>
-      <td><strong>Abréviation</strong></th>
-      <td><strong>Unité</strong></th>
-      <td><strong>Définition</strong></th>
+      <td width="15%"><strong>Terme</strong></td>
+      <td><strong>Abréviation</strong></td>
+      <td><strong>Unité</strong></td>
+      <td><strong>Définition</strong></td>
    </tr>
    <tr>
       <td>Puissance</td>
@@ -103,15 +103,12 @@ Avant de commencer, voici un tableau qui définie quelques termes essentiels pou
    </tr>
 </table>
 						
-							<h2>Equations dont nous disposons</h2>
-						
-						<p>Nous avons dans un premier temps trouver une équation nous permettant de relier à la fois la puissance, la cadence et la fréquence cardiaque : <br>
-						
-						<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-<mrow><mi>P</mi><mo>=</mo><mi>&#956;</mi><msup><mrow><mi>C</mi></mrow><mrow><mrow><mi>&#945;</mi></mrow></mrow></msup><mi>e</mi><mi>x</mi><msup><mrow><mi>p</mi></mrow><mrow><mrow><mo>-</mo><mi>&#946;</mi><mi>C</mi></mrow></mrow></msup><mo>(</mo><mi>H</mi><mo>(</mo><mi>t</mi><mo>+</mo><mi>l</mi><mo>)</mo><mo>-</mo><msub><mrow><mi>H</mi></mrow><mrow><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></mrow></msub><msup><mrow><mo>)</mo></mrow><mrow><mrow><mi>&#947;</mi></mrow></mrow></msup><mi>e</mi></mrow></math>
-						
 		
 							<h2>Première approche - La puissance constante</h2>
+							
+						<p>Nous avons dans un premier temps trouvé une équation nous permettant de relier à la fois la puissance, la cadence et la fréquence cardiaque : <br>
+												<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mrow><mi>P</mi><mo>=</mo><mi>&#956;</mi><msup><mrow><mi>C</mi></mrow><mrow><mrow><mi>&#945;</mi></mrow></mrow></msup><mi>e</mi><mi>x</mi><msup><mrow><mi>p</mi></mrow><mrow><mrow><mo>-</mo><mi>&#946;</mi><mi>C</mi></mrow></mrow></msup><mo>(</mo><mi>H</mi><mo>(</mo><mi>t</mi><mo>+</mo><mi>l</mi><mo>)</mo><mo>-</mo><msub><mrow><mi>H</mi></mrow><mrow><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></mrow></msub><msup><mrow><mo>)</mo></mrow><mrow><mrow><mi>&#947;</mi></mrow></mrow></msup><mi>e</mi></mrow></math>
 
             <p>Avant de commencer toute modélisation, nous avons dû procéder à un travail de recherches bibliographiques important. Quelques équations ont été trouvées, mais aucune ne permettait de relier tous nos paramètres. Il a donc fallu mettre en lien plusieurs de ces équations.</p>
             <p>Nous avons choisi de prendre comme fonction de fatigue la concentration de lactate au cours du temps. En effet, à partir de nos recherches, la quantité de lactate est directement proportionnelle à la concentration des protons. Ainsi, le but était de tracer l’évolution de la concentration de lactate dans le muscle au cours du temps, et ce pour différentes valeurs de cadence. A partir de cela, l'idée était de déterminer la meilleure cadence, que nous avons défini comme la cadence qui retarde au maximum l’augmentation de lactate. Nous nous sommes ici confrontés à un problème multi-échelle, où pour pouvoir relier nos équations il fallait tout d’abord regarder ce qui évolue le plus vite, pour pouvoir ensuite simplifier notre modèle en approximant certaines variables par leur état d’équilibre.</p>
