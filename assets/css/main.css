@@ -3201,6 +3201,12 @@ input, select, textarea {
 			opacity: 1;
 		}
 
+	#monBlock {
+		display : table;
+  		 margin : 0 auto;
+ 		 
+	}
+
 /* Main */
 
 	#main {
