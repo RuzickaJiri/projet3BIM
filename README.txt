@@ -28,3 +28,21 @@ Credits:
 	Other:
 		jQuery (jquery.com)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+_____________________________________________________________________________________________________
+
+
+Ceci est notre site internet, créer dans le cadre du projet 3BIM.
+Créer à partir d'un template (voir ci-dessus).
+
+Fonctionnalités implémentées :
+- Possibilité de nous contacter via téléphone;
+- Possibilité de nous contacter via mail;
+
+
+Navigateurs testés :
+- google chrome
+- mozilla firefox
+
+
+Bonne navigation :)
