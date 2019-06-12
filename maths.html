@@ -67,13 +67,13 @@
             
 							<h2>Définition des termes</h2>
 							
-Avant de commencer, voici un tableau qui définie quelques termes essentiels pour bien comprnedre la suite :
+Avant de commencer, voici un tableau qui définie quelques termes essentiels pour bien comprendre la suite :
   <table>
    <tr>
-      <th>Terme</th>
-      <th>Abréviation</th>
-      <th>Unité</th>
-      <th>Définition</th>
+      <td width="15%"><strong>Terme</strong></th>
+      <td><strong>Abréviation</strong></th>
+      <td><strong>Unité</strong></th>
+      <td><strong>Définition</strong></th>
    </tr>
    <tr>
       <td>Puissance</td>
@@ -97,8 +97,10 @@ Avant de commencer, voici un tableau qui définie quelques termes essentiels pou
 						
 							<h2>Equations dont nous disposons</h2>
 						
-						<p>Nous avons dans un premier temps trouver une équation nous permettant de relier à la fois la puissance, la cadence et la fréquence cardiaque :
-						<a href="https://www.codecogs.com/eqnedit.php?latex=P=\mu&space;C^{\alpha}exp^{-\beta&space;C}(H(t&plus;l)-H_{min})^{\gamma}e&space;\qquad&space;(1)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P=\mu&space;C^{\alpha}exp^{-\beta&space;C}(H(t&plus;l)-H_{min})^{\gamma}e&space;\qquad&space;(1)" title="P=\mu C^{\alpha}exp^{-\beta C}(H(t+l)-H_{min})^{\gamma}e \qquad (1)" /></a></p>
+						<p>Nous avons dans un premier temps trouver une équation nous permettant de relier à la fois la puissance, la cadence et la fréquence cardiaque : <br>
+						
+						<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mrow><mi>P</mi><mo>=</mo><mi>&#956;</mi><msup><mrow><mi>C</mi></mrow><mrow><mrow><mi>&#945;</mi></mrow></mrow></msup><mi>e</mi><mi>x</mi><msup><mrow><mi>p</mi></mrow><mrow><mrow><mo>-</mo><mi>&#946;</mi><mi>C</mi></mrow></mrow></msup><mo>(</mo><mi>H</mi><mo>(</mo><mi>t</mi><mo>+</mo><mi>l</mi><mo>)</mo><mo>-</mo><msub><mrow><mi>H</mi></mrow><mrow><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></mrow></msub><msup><mrow><mo>)</mo></mrow><mrow><mrow><mi>&#947;</mi></mrow></mrow></msup><mi>e</mi></mrow></math>
 						
 		
 							<h2>Première approche - La puissance constante</h2>
@@ -111,26 +113,63 @@ Avant de commencer, voici un tableau qui définie quelques termes essentiels pou
             <ul>Nous avons été confronté à divers problèmes lors du travail sur le modèle, qui nous ont chacun poussé à revoir notre approche :
 			  <li>Dans l’ensemble, tous nos paramètres variaient dans le temps à une vitesse comparable, on ne pouvait donc pas simplifier une de nos variables par son état d’équilibre.</li>
 				<li>Nous nous sommes rendus compte qu'à partir du moment où la demande en dioxygène est supérieure au volume de dioxygène absorbé, le lactate évoluait toujours de la même façon dans le muscle. Autrement dit, tous les individus se fatiguent aussi vite après avoir atteint ce seuil, qui correspond à environ 70% de la VO2 max (capacité maximale d’absorption de dioxygène d’un individu). Ainsi, on cherchait à ce moment à déterminer la cadence où le temps mis pour dépasser ce seuil (D(O2)>70%VO2max) est le plus grand.<br>
-				Cependant, l’équation (2) est difficilement exploitable : en effet, elle est non autonome donc on ne sait pas la résoudre.
+				Cependant, l’équation (2) est difficilement exploitable : en effet, elle est non autonome donc on ne sait pas la résoudre.</li>
+				 <li>Une des idées pour palier à ce problème est de se concentrer sur la recherche de la cadence qui minimise la fréquence cardiaque. Ainsi, on minimise le coût énergétique demandé au coureur. </li>
+				    </ul>
+					  <p> On trace à partir de l’équation (1) la fréquence cardiaque en fonction de la cadence, pour différentes valeurs de puissance.</p>
+						<img src="images/model/Rplot1.png" alt=""/>
+						<p>On remarque que 80 rpm est la cadence qui minimise la fréquence cardiaque quelque soit la puissance.D’après ces résultats, c’est donc à 80 rpm que le coût énergétique que doit fournir le coureur est le plus faible.</p><br>
 
+            <h2>Première approche - La puissance constante</h2>
 						
+						<p>La première approche à puissance constante ne nous ayant pas donné entière satisfaction, nous prenons cette fois-ci une puissance non constante. Notre démarche ici est dans un premier temps de créer une fonction “puissance” pour ensuite pouvoir la passer en paramètre de la fonction de lactate. Le principe de notre fonction puissance est d’associer à chaque cadence une valeur de puissance en utilisant l’équation (1).</p> <br>
+						<p>Pour modéliser le taux de lactate dans le sang, on exploite l’équation mathématique qui nous donne la concentration du lactate pendant un effort. </p>
 						
+						<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mrow><msup><mrow><mi>L</mi></mrow><mrow><mrow><mi>o</mi><mi>n</mi></mrow></mrow></msup><mo>(</mo><mi>&#955;</mi><mi>,</mi><mi>v</mi><mi>,</mi><mi>t</mi><mo>)</mo><mo>=</mo><msub><mrow><mi>L</mi></mrow><mrow><mrow><mi>&#955;</mi><mi>,</mi><mi>v</mi></mrow></mrow></msub><mo>(</mo><mi>&#955;</mi><mi>,</mi><mi>v</mi><mo>)</mo><msubsup><mrow><mi>L</mi></mrow><mrow><mrow><mi>t</mi></mrow></mrow><mrow><mrow><mi>o</mi><mi>n</mi></mrow></mrow></msubsup><mo>(</mo><mi>t</mi><mo>)</mo></mrow></math> <br>
+
+            <p>Cette concentration dépend du facteur lambda qui traduit l’état physique d’individu, de l’intensité d’exercice v et du temps et on remarque donc qu’il s’agit du produit de deux concentrations de lactate indépendante l’une à l’autre. La première partie de ce produit étudie la dépendance du niveau de lactate à l’intensité de l’exercice et elle s’exprime de manière suivante : </p>
+
+						<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mrow><msub><mrow><mi>L</mi></mrow><mrow><mrow><mi>&#955;</mi><mi>,</mi><mi>v</mi></mrow></mrow></msub><mo>(</mo><mi>&#955;</mi><mi>,</mi><mi>v</mi><mo>)</mo><mo>=</mo><msub><mrow><mi>L</mi></mrow><mrow><mrow><mi>b</mi><mi>a</mi><mi>s</mi><mi>a</mi><mi>l</mi></mrow></mrow></msub><mo>+</mo> <mfenced open='('  close=')' ><mrow><msub><mrow><mi>L</mi></mrow><mrow><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></mrow></msub><mo>-</mo><msub><mrow><mi>L</mi></mrow><mrow><mrow><mi>b</mi><mi>a</mi><mi>s</mi><mi>a</mi><mi>l</mi></mrow></mrow></msub></mrow></mfenced><mi>e</mi><mi>x</mi><mi>p</mi> <mfenced open='('  close=')' ><mrow><msub><mrow><mi>&#945;</mi></mrow><mrow><mn>6</mn></mrow></msub><mo>*</mo> <mfenced open='['  close=']' ><mrow><mi>v</mi><mo>-</mo><msub><mrow><mi>v</mi></mrow><mrow><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></mrow></msub><mo>(</mo><mi>&#955;</mi><mo>)</mo></mrow></mfenced></mrow></mfenced></mrow></math> <br>
+
+						<p>La seconde partie indique l’accumulation du lactate en fonction de temps : </p>
 						
+						<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mrow><msubsup><mrow><mi>L</mi></mrow><mrow><mrow><mi>t</mi></mrow></mrow><mrow><mrow><mi>o</mi><mi>n</mi></mrow></mrow></msubsup><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mn>1</mn><mo>-</mo><mi>e</mi><mi>x</mi><mi>p</mi><mo>(</mo><mfrac linethickness="1"><mrow><mrow><mo>-</mo><mi>t</mi></mrow></mrow><mrow><mrow><msub><mrow><mi>&#945;</mi></mrow><mrow><mn>7</mn></mrow></msub></mrow></mrow></mfrac><mo>)</mo></mrow></math> <br>
+
+           <p>Plusieurs paramètres entrent en jeu dans ces équations, il s’agit des : </p>
+
+            <ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
 						
+						<p>On trouve dans la littérature une estimation de ces paramètres physiologiques. On prend alors les intervalles suivants : </p><br>
 						
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
 						
+						<p>Pour nous simplifier le travail, dans un premier temps, on va considérer lambda = 1, c’est-à-dire, le cas d’un athlète professionnel en bon santé. </p> <br>
 						
+						<p>Grâce aux équations on voit que le lactate admet une croissance exponentielle. On trace facilement l’évolution du lactate en fonction du temps, mais pour pouvoir tracer l’évolution de lactate en fonction de l’intensité, on a besoin de la fonction de puissance. Afin de récupérer cette fonction, on se redirige vers l’équation (1) qui lie la cadence, la puissance et la fréquence cardiaque. On calcule tout d’abord l’évolution de puissance pour une cadence en prenant en compte toutes les fréquences cardiaques, on calcule ensuite la moyenne pour cette cadence donnée. On répète avec toutes les cadences. Grâce à ce processus, on peut afficher l’évolution de la puissance en fonction de la cadence et la concentration du lactate. </p><br>
 						
+						<img src="images/model/Rplot.png" alt=""/>
 						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+						<p>On remarque donc d’après toutes nos modélisations que les cadences les plus faibles sont celles minimisant la fréquence cardiaque et donc par conséquent la demande en dioxygène. Ainsi, le coût énergétique demandé par ces faibles cadences est faible.
+Néanmoins, elles impliquent de fortes contraintes musculaires.
+Au contraire, les cadences élevées demandent elles un coût énergétique élevé, mais en contrepartie de faibles contraintes au sein des muscles. Tout l’enjeu est donc de trouver le meilleur compromis entre coût énergétique et contrainte musculaire.</p>
+
 						
 						</div>
 					</div>
