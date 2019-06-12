@@ -2882,8 +2882,11 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 5em 0 0.1em 0 ;
 	}
+		#header .video{
+			padding: 0 0 0.1em 0;
+		}
 
 		#header .logo {
 			display: block;
@@ -3384,5 +3387,4 @@ input, select, textarea {
 	.wrapper .wrapper__video{
   	object-fit: cover;
   	width: 100%;
-  	height: 100%;
 	}
