@@ -67,7 +67,7 @@
 							
 	 <table>
    <tr>
-      <td align="center" width="25%" > <strong> Jiri</strong></td>
+      <td align="center" width="25%" > <strong> Jiří</strong></td>
       <td align="center" width="25%" > <strong> Yann </strong></td>
       <td align="center" width="25%" > <strong> Maxime </strong></td>
       <td align="center" width="25%" > <strong> Dimitri </strong></td>
@@ -81,7 +81,7 @@
    </tr>
   
    <tr>
-      <td> <p class="people"> Âgé de 22 ans et d'origine tchèque, je suis venu en France pour réaliser ici mes études supérieures. Après avoir fini la filière internationale Eurinsa, j'ai choisi la Bioinformatique pour pouvoir lier deux de mes passions : la biologie et les mathématiques. En passant du ski de fond à l'hockey sur gazon, je suis particulièrement enthousiasmé par le cyclisme. Ce projet est donc une occasion bienvenue pour appliquer l'analyse théorique en résulats pratiques. </p></td>
+      <td> <p class="people"> Âgé de 22 ans et d'origine tchèque, je suis venu en France pour réaliser ici mes études supérieures. Après avoir fini la filière internationale Eurinsa, j'ai choisi la Bioinformatique pour pouvoir lier deux de mes passions : la biologie et les mathématiques. En passant du ski de fond au hockey sur gazon, je suis particulièrement enthousiasmé par le cyclisme. Ce projet est donc une occasion bienvenue pour appliquer l'analyse théorique en résultats pratiques. </p></td>
       <td><p class="people"> Je suis étudiant à l'INSA de Lyon en spécialité bioinformatique et modélisation depuis la dernière rentrée, venant de l'INSA Rouen. Âgé de 21 ans et cycliste depuis maintenant 15 ans, je suis toujours autant passionné par ce sport. J'enchaîne les courses sur route et en cyclocross les weekends. Je suis donc particulièrement motivé par ce projet qui permet de relier mes études et ma passion.</p></td>
       <td><p class="people">Âgé de 20 ans, je suis arrivé à l'INSA de Lyon en septembre 2018. Auparavant, j'ai effectué 2 ans à l'INSA de Rouen pour le cycle préparatoire. Depuis tout petit, je suis passionné par le sport (que ce soit la natation, le badminton ou le tennis). J'envisage par la suite d'appliquer les connaissances acquises au cours de ma formation en BIM dans le domaine du sport. </p></td>
       <td><p class="people"> Âgé de 21 ans, je suis étudiant à l’INSA Lyon depuis la première année, j’ai fait le premier cycle en filière classique. Je suis actuellement au département Biosciences en filière BioInformatique et modélisation. Je pratique le sport depuis ma tendre enfance. Actuellement, je fais de la musculation. J’adore tout ce qui concerne la physiologie et la mécanique du corps humain, alors qui sait, me suis-je peut-être trompé de filière ? ;)</p></td>
@@ -98,41 +98,33 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
+						
+						<table>
+						<tr>
+						   <td align="center" width="5%"><h2><a HREF="mailto:pedaler.sanssefatiguer@gmail.com">écrivez-nous</a></h2>
+						   <img src="images/insa_logo.png" width="50%" alt="" /></th>
+						   <td align="center" width="5%"><h2> Follow </h2>
+						   
+						   <ul class="icons">
+						   
+						   <li><a href="https://github.com/RuzickaJiri/projet3BIM.git" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+									
+									<li><a <button id="myBtn" class="dropbtn"> <i class="icon style2 fa-phone"></i> </button></li>
+									  <div id="myDropdown" class="dropdown-content">
+										<a href="#contact">+33 07 67 59 78 87</a> </a> 
+									  </div> 
 									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
+									</td>
+						</tr>		 
+							
+						</table>
+							
+											
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Untitled. All rights reserved</li><li>Design: Yann Bachelot, Maxime Carlier, Dimitri Mikec, Jiri Ruzicka based on <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
+							
+						
 						</div>
 					</footer>
 
@@ -147,3 +139,15 @@
 
 	</body>
 </html>
+
+
+<script>
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("myBtn").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+</script>
+
